@@ -6,7 +6,8 @@ require_relative '../config/environment'
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'vcr'
-require 'webmock/rspec'
+
+Warning[:deprecated] = false
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/vcr_cassettes'
   config.hook_into :webmock
