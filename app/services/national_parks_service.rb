@@ -4,7 +4,7 @@ class NationalParksService
 
   def self.find_campgrounds
     response = conn.get('campgrounds') do |req|
-      req.headers['X-Api-Key'] = API_KEY
+      req.headers['nps_api_key'] = API_KEY
     end
 
     parse_json(response)
@@ -12,7 +12,7 @@ class NationalParksService
 
   def self.get_all_campgrounds
     response = conn.get('campgrounds') do |req|
-      req.headers['X-Api-Key'] = API_KEY
+      req.headers['nps_api_key'] = API_KEY
     end
 
     parse_json(response)
